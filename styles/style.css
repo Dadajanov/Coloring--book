@@ -1,0 +1,564 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* END OF CSS RESET */
+
+/* FONTS */
+h1,
+h2 {
+  font-family: "Fredoka One", cursive;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+h1 {
+  font-size: 3rem;
+  padding: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* GENERAL */
+body {
+  background-color: rgb(250, 215, 220);
+}
+
+.container {
+  background-color: white;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  border: 0.2rem solid black;
+  box-shadow: 0 0 10px 10px pink;
+  width: 90%;
+  margin: 0 auto 5rem auto;
+  padding: 0 1rem 2rem 1rem;
+}
+
+svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.cursor {
+  display: flex;
+  align-items: center;
+  width: 30rem;
+}
+
+.cursor-size {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.cursor-size:hover {
+  opacity: 1;
+}
+/* path {
+	fill: red !important;
+} */
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 90%;
+  min-height: 100%;
+  box-shadow: 0 0.5rem 0.2rem 0.2rem rgb(255, 192, 203, 0.4);
+  border: 2px solid black;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin: auto;
+  /* top: 0; bottom: 0;  */
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+}
+
+.dropdown button {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 2.5rem;
+  border: 0.2rem solid black;
+  border-radius: 2rem;
+  background-color: lightpink;
+  box-shadow: 0 0 0.2rem 0.2rem rgb(255, 192, 203, 0.4);
+}
+
+.dropdown button:hover,
+.dropdown button:active {
+  background-color: white;
+}
+
+/* TINY IMAGES */
+.tiny-images div {
+  border: 5px solid black;
+  border-radius: 2rem;
+  background-color: pink;
+  transition: transform 0.2s;
+}
+
+.tiny-images div:hover {
+  transform: scale(1.05);
+  background-color: white;
+  box-shadow: 0 0.2rem 0.2rem 0.2rem rgb(255, 192, 203, 0.4);
+}
+
+/* COLOR PALETTE */
+#palette {
+  width: 100%;
+  height: 8rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 0.1rem solid black;
+  box-sizing: border-box;
+}
+
+#palette div {
+  width: 100%;
+  height: 100%;
+  border: 0.1rem solid black;
+  box-sizing: border-box;
+}
+
+#palette div:hover {
+  box-shadow: inset 0 0 0 10px black;
+}
+
+#red {
+  background-color: red;
+}
+#orange {
+  background-color: orange;
+}
+#yellow {
+  background-color: yellow;
+}
+#green {
+  background-color: green;
+}
+#blue {
+  background-color: blue;
+}
+#purple {
+  background-color: purple;
+}
+
+.selected {
+  box-shadow: inset 0 0 0 5px black;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 650px) {
+  svg {
+    width: 70vw;
+  }
+}
+
+@media (min-width: 900px) {
+  main {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-areas: "palette svg";
+  }
+
+  h2 {
+    text-align: left;
+    padding: 0 0.5rem;
+  }
+
+  .dropdown:hover .dropdown-content {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.5rem;
+  }
+
+  svg {
+    grid-area: svg;
+    width: 50vw;
+  }
+
+  #paletteBox {
+    grid-area: palette;
+    padding: 1rem;
+  }
+
+  #paletteBox h2 {
+    text-align: center;
+  }
+
+  #palette {
+    width: 25vw;
+    height: 50vw;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1100px) {
+  #palette {
+    width: 20vw;
+  }
+}
+
+/* SVG ILLUSTRATOR STYLES */
+.st0 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 7;
+  stroke-miterlimit: 10;
+}
+.st00 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 7;
+  stroke-miterlimit: 10;
+}
+.st1 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 5;
+  stroke-miterlimit: 10;
+}
+.st2 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 6;
+  stroke-miterlimit: 10;
+}
+.st3 {
+  fill: #ffffff !important;
+  stroke: #000000;
+  stroke-width: 6;
+  stroke-miterlimit: 10;
+}
+.st4 {
+  stroke: #000000;
+  fill: #000000 !important;
+  stroke-width: 6;
+  stroke-miterlimit: 10;
+}
+.st5 {
+  fill: #ffffff !important;
+}
+
+.ca0 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 5;
+  stroke-miterlimit: 10;
+}
+.ca1 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+}
+.ca2 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+.ca3 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 6;
+  stroke-miterlimit: 10;
+}
+.ca4 {
+  fill: none;
+  stroke: #000000;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+}
+.ca5 {
+  fill: none;
+  stroke: #000000;
+  stroke-width: 6;
+  stroke-miterlimit: 10;
+}
+.ca6 {
+  display: none;
+}
+.ca7 {
+  display: inline;
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 6;
+  stroke-miterlimit: 10;
+}
+
+.dr0 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 5;
+  stroke-miterlimit: 10;
+}
+.dr1 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+}
+.dr2 {
+  fill: #ffffff;
+}
+.dr3 {
+  stroke: #000000;
+  fill: black !important;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+.dr4 {
+  fill: none;
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+.dr5 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 6;
+  stroke-miterlimit: 10;
+}
+.dr6 {
+  fill: none;
+  stroke: #000000;
+  stroke-width: 6;
+  stroke-miterlimit: 10;
+}
+.dr7 {
+  fill: none;
+  stroke: #000000;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+.dr8 {
+  fill: #ffffff !important;
+  stroke: #000000;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+}
+.dr9 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+.dr10 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+}
+.black {
+  fill: black !important;
+}
+.white {
+  fill: white !important;
+}
+
+.fl0 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+}
+.fl1 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 8;
+  stroke-miterlimit: 10;
+}
+.fl2 {
+  display: none;
+}
+.fl3 {
+  display: inline;
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 6;
+  stroke-miterlimit: 10;
+}
+.fl4 {
+  display: inline;
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 7;
+  stroke-miterlimit: 10;
+}
+.fl5 {
+  display: inline;
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 8;
+  stroke-miterlimit: 10;
+}
+.fl6 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 6;
+  stroke-miterlimit: 10;
+}
+.fl7 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 9;
+  stroke-miterlimit: 10;
+}
+.fl8 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-width: 5;
+  stroke-miterlimit: 10;
+}
