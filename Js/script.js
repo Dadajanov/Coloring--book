@@ -54,16 +54,12 @@ $tinyImages.closest('div').addEventListener('click', function (t) {
     }
   }
   if (t.target.dataset.tiny == 'puppy') {
-    console.log('puppy')
     $bigImages[0].style.display = 'block'
   } else if (t.target.dataset.tiny == 'cakes') {
-    console.log('cakes')
     $bigImages[1].style.display = 'block'
   } else if (t.target.dataset.tiny == 'dragon') {
-    console.log('dragon')
     $bigImages[2].style.display = 'block'
   } else if (t.target.dataset.tiny == 'flowers') {
-    console.log('flowers')
     $bigImages[3].style.display = 'block'
   }
 })
@@ -81,10 +77,19 @@ for (var b = 1; b < $bigImages.length; b++) {
 // SVG
 // ////////////////////////
 var $svg = document.querySelectorAll('svg')
+var $path = document.querySelectorAll('path')
 
 for (var s = 0; s < $svg.length; s++) {
   $svg[s].addEventListener('click', function (c) {
     c.target.style.fill = game.selectedColor
+  })
+}
+
+for (var s = 0; s < $path.length; s++) {
+  $path[s].addEventListener('click', function (c) {
+    console.log(c.target);
+    console.log($path);
+    console.log(c.target === $path[s]);
   })
 }
 
@@ -105,4 +110,11 @@ cursor.addEventListener('change', (event) => {
   paletteColor(event.target.value)
   changeCursor(event.target.value);
 })
+
+const printSvg = document.getElementById('print-svg')
+
+printSvg.addEventListener('click', () => {
+  window.print();
+})
+
 
